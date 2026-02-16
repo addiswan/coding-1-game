@@ -1,6 +1,6 @@
 # Video Game Project
 
-Due date: N1: 3/5 :: L2: 3/6
+Due date: 3/6
 
 When you finish, add your video link here and submit one link to your project repository.
 * [Playtesting Video (1 per group)](http://includeyourlinkhere)
