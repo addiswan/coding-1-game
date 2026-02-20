@@ -14,6 +14,7 @@ Every square survived = 1 score point added
 High score = 999 (game ends at 999)
 
 Major Game Elements:
-
+Duck emoji (as playable bird), periodic and random obstacles, score counter
 
 Gameplay Process:
+Player hits space to keep bird in air, dies if an obstacle is hit
