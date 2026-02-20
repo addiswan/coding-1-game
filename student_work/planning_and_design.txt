@@ -6,10 +6,12 @@ Part I: Planning & Design (15 pts)
 * Sketch a simple plan showing how the game will work step-by-step
 
 Game Idea:
-
+Flappy Bird dupe (Floppy Duck)
 
 Game Rules:
-
+Hit an obstacle = die 
+Every square survived = 1 score point added
+High score = 999 (game ends at 999)
 
 Major Game Elements:
 
