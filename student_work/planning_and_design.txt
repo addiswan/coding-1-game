@@ -19,6 +19,7 @@ Every square survived = 1 score point added
 High score = 999 (game ends at 999)
 
 Major Game Elements:
+<<<<<<< HEAD
 Duck emoji 🦆 (as playable bird), 
 periodic and random obstacles, 🪨 🌲 🌳 🗿
 score counter
@@ -30,3 +31,14 @@ Player hits space to keep bird in air, dies if an obstacle is hit
 
 Gameplay Process:
 >>>>>>> 16f013a (Add additional planning steps for game design)
+=======
+Duck emoji (as playable bird), periodic and random obstacles, score counter
+
+<<<<<<< HEAD
+
+Gameplay Process:
+=======
+Gameplay Process:
+Player hits space to keep bird in air, dies if an obstacle is hit
+>>>>>>> 304172f (Added game elemtns & gameplay)
+>>>>>>> 4900d30 (Added game elemtns & gameplay)
