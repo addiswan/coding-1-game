@@ -29,26 +29,6 @@ game_data = {
     'empty': "  "
 }
 
-def draw_board(stdscr):
-    curses.start_color()
-    curses.use_default_colors()
-    curses.init_pair(1, curses.COLOR_WHITE, -1)
-
-    stdscr.clear()
-    for y in range(game_data['height']):
-        row = ""
-        for x in range(game_data['width']):
-            # Player
-            if x == game_data['player']['x'] and y == game_data['player']['y']:
-                row += game_data['chicken']
-            # Obstacles
-           # elif any(o['x'] == x and o['y'] == y for o in game_data['obstacles']):
-              #  row += game_data['obstacle']
-            else:
-                row += game_data['empty']
-        stdscr.addstr(y, 0, row, curses.color_pair(1))
-
-    stdscr.refresh()
-    stdscr.getkey()  # pause so player can see board
-
-curses.wrapper(draw_board)
+def draw_board(screen):
+   z # Print the board and all game elements using curses
+>>>>>>> 260fead (put in icons)
