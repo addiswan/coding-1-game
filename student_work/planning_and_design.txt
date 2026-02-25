@@ -20,6 +20,7 @@ High score = 999 (game ends at 999)
 
 Major Game Elements:
 <<<<<<< HEAD
+<<<<<<< HEAD
 Duck emoji 🦆 (as playable bird), 
 periodic and random obstacles, 🪨 🌲 🌳 🗿
 score counter
@@ -33,6 +34,11 @@ Gameplay Process:
 >>>>>>> 16f013a (Add additional planning steps for game design)
 =======
 Duck emoji (as playable bird), periodic and random obstacles, score counter
+=======
+Duck emoji 🦆 (as playable bird), 
+periodic and random obstacles, 🪨 🌲 🌳 🗿
+score counter
+>>>>>>> 239112d (put in icons)
 
 <<<<<<< HEAD
 
