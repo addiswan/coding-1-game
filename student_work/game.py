@@ -1,11 +1,13 @@
 # Write your game here
 
-game_data = {
+#game_data = {
     # Store board dimensions, player/enemy positions, score, energy, collectibles, and icons
-}
+#}
 
-def draw_board(screen):
+#def draw_board(screen):
     # Print the board and all game elements using curses
 
+import curses
+import time
 
 # Good Luck!
