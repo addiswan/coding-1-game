@@ -23,7 +23,10 @@ game_data = {
 }
 
 def draw_board(stdscr):
-    # Print the board and all game elements using curses
+    curses.start_color()
+    curses.use_default_colors()
+    curses.init_pair(1, curses.COLOR_BLACK, 1)
+
     stdscr.clear()
     for y in range(game_data['height']):
         row = ""
