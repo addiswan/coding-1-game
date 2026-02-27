@@ -22,7 +22,7 @@ game_data = {
     'empty': "  "
 }
 
-def draw_board(screen):
+def draw_board(stdscr):
     # Print the board and all game elements using curses
     stdscr.clear()
     for y in range(game_data['height']):
