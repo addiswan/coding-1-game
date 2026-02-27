@@ -39,7 +39,7 @@ def draw_board(stdscr):
               #  row += game_data['obstacle']
             else:
                 row += game_data['empty']
-        stdscr.addstr(y, 0, row, curses.color_pair(1))
+        stdscr.addstr(y, 0, row, curses.color_pair(1)) #read docs for curses
     stdscr.addstr(game_data['height'] + 1, 0,
                   f"Moves Survived: {game_data['player']['score']}",
                   curses.color_pair(1))
