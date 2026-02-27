@@ -41,7 +41,7 @@ def draw_board(screen):
                   f"Moves Survived: {game_data['player']['score']}",
                   curses.color_pair(1))
     stdscr.addstr(game_data['height'] + 2, 0,
-                  "Move with W/A/S/D, Q to quit",
+                  "Move with W/S/D (no backwards), Q to quit",
                   curses.color_pair(1))
     stdscr.refresh()
     stdscr.getkey()  # pause so player can see board
