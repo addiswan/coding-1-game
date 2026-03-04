@@ -42,10 +42,10 @@ def draw_board(stdscr):
         stdscr.addstr(y, 0, row, curses.color_pair(1)) #read docs for curses
     stdscr.addstr(game_data['height'] + 1, 0,
                   f"Moves Survived: {game_data['player']['score']}",
-                  curses.color_pair(1))
+                  curses.color_pair(0))
     stdscr.addstr(game_data['height'] + 2, 0,
                   "Move with W/S/D (no backwards), Q to quit",
-                  curses.color_pair(1))
+                  curses.color_pair(0))
     stdscr.refresh()
     stdscr.getkey()  # pause so player can see board
 
