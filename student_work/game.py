@@ -9,7 +9,9 @@ game_data = {
     'width': 10,
     'height': 10,
     'player': {"x": 0, "y": 0, "score": 0},
- 
+    'obstacles': [
+        {"x": 2, "y": 1, },
+    ],
 
     # ASCII icons
     'chicken': "\U0001F414",
@@ -35,16 +37,16 @@ def draw_board(stdscr):
             else:
                 row += game_data['empty']
         stdscr.addstr(y, 0, row, curses.color_pair(1)) #read docs for curses
-        stdscr.addstr(game_data['height'] + 1, 0,
-                    f"Moves Survived: {game_data['player']['score']}",
-                    curses.color_pair(1))
-        stdscr.addstr(game_data['height'] + 2, 0,
-                    "Move with W/S/D (no backwards), Q to quit",
-                    curses.color_pair(1))
-        stdscr.refresh()
-        stdscr.getkey()  # pause so player can see board
+        # stdscr.addstr(game_data['height'] + 1, 0,
+        #             f"Moves Survived: {game_data['player']['score']}",
+        #             curses.color_pair(1))
+        # stdscr.addstr(game_data['height'] + 2, 0,
+        #             "Move with W/S/D (no backwards), Q to quit",
+        #             curses.color_pair(1))
+    stdscr.refresh()
+        # stdscr.getkey()  # pause so player can see board
 
-curses.wrapper(draw_board)
+# curses.wrapper(draw_board)
 
 def move_player(key):
     x = game_data['player']['x']
@@ -72,17 +74,20 @@ def move_player(key):
     game_data['player']['score'] += 1
 
 
-def obstacless():
-    if random.random() > 0.2:
-        return
+# def obstacless():
+#     obstacle_count = [c for c in game_data['obstacles']]
+#     if len(obstacle_count) >= 3:
+#         return
+#     if random.random() > 0.2:
+#         return
 
-    while True:
-        x = random.randint(0, game_data['width'] - 1)
-        y = random.randint(0, game_data['height'] - 1)
+#     while True:
+#         x = random.randint(0, game_data['width'] - 1)
+#         y = random.randint(0, game_data['height'] - 1)
 
-        if (x, y) == (game_data['player']['x'], game_data['player']['y']):
-            continue
-
+#         if (x, y) == (game_data['player']['x'], game_data['player']['y']):
+#             continue
+#         break
 
 def main(stdscr):
     curses.curs_set(0)
@@ -101,7 +106,7 @@ def main(stdscr):
                 break
 
             move_player(key)
-            obstacless()
+            # obstacless()
             draw_board(stdscr)
             time.sleep(0.2)
 
