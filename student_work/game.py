@@ -1,6 +1,7 @@
 # Write your game here
 
 import curses
+import random
 import time
 
 # Good Luck!
@@ -8,10 +9,7 @@ game_data = {
     'width': 10,
     'height': 10,
     'player': {"x": 0, "y": 0, "score": 0},
-    'obstacles': [
-        {"x": 1, "y": 2},
-        {"x": 3, "y": 1}
-    ],
+ 
 
     # ASCII icons
     'chicken': "\U0001F414",
@@ -33,9 +31,7 @@ def draw_board(stdscr):
             # Player
             if x == game_data['player']['x'] and y == game_data['player']['y']:
                 row += game_data['chicken']
-            #Obstacles
-            elif any(o['x'] == x and o['y'] == y for o in game_data['obstacles']):
-               row += game_data['rock']
+
             else:
                 row += game_data['empty']
         stdscr.addstr(y, 0, row, curses.color_pair(1)) #read docs for curses
@@ -69,11 +65,24 @@ def move_player(key):
         # Check for obstacles
     # if any(o['x'] == new_x and o['y'] == new_y for o in game_data['obstacles']):
     #     return
-    
+
     # Update position and increment score
     game_data['player']['x'] = new_x
     game_data['player']['y'] = new_y
     game_data['player']['score'] += 1
+
+
+def obstacless():
+    if random.random() > 0.2:
+        return
+
+    while True:
+        x = random.randint(0, game_data['width'] - 1)
+        y = random.randint(0, game_data['height'] - 1)
+
+        if (x, y) == (game_data['player']['x'], game_data['player']['y']):
+            continue
+
 
 def main(stdscr):
     curses.curs_set(0)
@@ -92,6 +101,9 @@ def main(stdscr):
                 break
 
             move_player(key)
+            obstacless()
             draw_board(stdscr)
+            time.sleep(0.2)
+
 
 curses.wrapper(main)
