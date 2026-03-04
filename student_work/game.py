@@ -74,20 +74,20 @@ def move_player(key):
     game_data['player']['score'] += 1
 
 
-# def obstacless():
-#     obstacle_count = [c for c in game_data['obstacles']]
-#     if len(obstacle_count) >= 3:
-#         return
-#     if random.random() > 0.2:
-#         return
+def obstacless():
+    obstacle_count = [c for c in game_data['obstacles']]
+    if len(obstacle_count) >= 3:
+        return
+    if random.random() > 0.2:
+        return
 
-#     while True:
-#         x = random.randint(0, game_data['width'] - 1)
-#         y = random.randint(0, game_data['height'] - 1)
+    while True:
+        x = random.randint(0, game_data['width'] - 1)
+        y = random.randint(0, game_data['height'] - 1)
 
-#         if (x, y) == (game_data['player']['x'], game_data['player']['y']):
-#             continue
-#         break
+        if (x, y) == (game_data['player']['x'], game_data['player']['y']):
+            continue
+        break
 
 def main(stdscr):
     curses.curs_set(0)
@@ -106,7 +106,7 @@ def main(stdscr):
                 break
 
             move_player(key)
-            # obstacless()
+            obstacless()
             draw_board(stdscr)
             time.sleep(0.2)
 
