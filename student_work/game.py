@@ -33,6 +33,9 @@ def draw_board(stdscr):
             # Player
             if x == game_data['player']['x'] and y == game_data['player']['y']:
                 row += game_data['chicken']
+            # Obstacles
+            elif any(c['x'] == x and c['y'] == y for c in game_data['obstacles']):
+                row += game_data['rock']
 
             else:
                 row += game_data['empty']
@@ -86,6 +89,8 @@ def obstacless():
         y = random.randint(0, game_data['height'] - 1)
 
         if (x, y) == (game_data['player']['x'], game_data['player']['y']):
+            continue
+        if any(o['x'] == x and o['y'] == y for o in game_data['obstacles']):
             continue
         break
 
