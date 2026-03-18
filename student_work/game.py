@@ -21,9 +21,9 @@ game_data = {
     'empty': "  ",
 }
 def random_obs_move():
-    for obstacle in game_data['rock']:
-        obstacle["x"] = random.randint(1,2)
-        obstacle["y"] = random.randint(1,14)
+    for obstacle in game_data['obstacles']:
+        obstacle["x"] = random.randint(0,3)
+        obstacle["y"] = random.randint(0,15)
 
 def draw_board(stdscr):
     curses.start_color()
