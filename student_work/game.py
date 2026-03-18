@@ -6,20 +6,24 @@ import time
 
 # Good Luck!
 game_data = {
-    'width': 10,
-    'height': 10,
+    'width': 15,
+    'height': 2,
     'player': {"x": 0, "y": 0, "score": 0},
     'obstacles': [
         {"x": 2, "y": 1, },
     ],
 
-    # ASCII icons
+    #icons
     'chicken': "\U0001F414",
     'rock': "\U0001FAA8 ",
     'tree1': "\U0001F332",
     'tree2': "\U0001F333",
-    'empty': "  "
+    'empty': "  ",
 }
+def random_obs_move():
+    for obstacle in game_data['rock']:
+        obstacle["x"] = random.randint(1,2)
+        obstacle["y"] = random.randint(1,14)
 
 def draw_board(stdscr):
     curses.start_color()
@@ -79,7 +83,7 @@ def move_player(key):
 
 def obstacless():
     obstacle_count = [c for c in game_data['obstacles']]
-    if len(obstacle_count) >= 3:
+    if len(obstacle_count) >= 7:
         return
     if random.random() > 0.2:
         return
@@ -93,6 +97,8 @@ def obstacless():
         if any(o['x'] == x and o['y'] == y for o in game_data['obstacles']):
             continue
         break
+
+
 
 def main(stdscr):
     curses.curs_set(0)
@@ -111,7 +117,7 @@ def main(stdscr):
                 break
 
             move_player(key)
-            obstacless()
+            random_obs_move()
             draw_board(stdscr)
             time.sleep(0.2)
 
